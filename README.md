@@ -9,3 +9,4 @@ Date:   Tue Oct 29 19:54:49 2019 +0200
 
     lab1: creating rep
 ```
+3. За допомогою команди **git checkout -b** створив нову гілку.
