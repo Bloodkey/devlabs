@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+import platform
 import os
 from datetime import datetime
 
@@ -9,5 +10,16 @@ def main(request):
 
 
 def health(request):
-    response = {'date': 'test1', 'current_page': "test2", 'server_info': "test3", 'client_info': "test4"}
+    date_now = datetime.now()
+    date = date_now.strftime("%Y-%m-%d %H:%M:%S")
+    page = request.path
+    client = request.META['HTTP_USER_AGENT']
+    response = {'date': date,
+                'current_page': page,
+                'server_info': {
+                    'System': platform.system(),
+                    'Release': platform.release(),
+                    'Type': platform.machine(),
+                },
+                'client_info': client}
     return JsonResponse(response)
