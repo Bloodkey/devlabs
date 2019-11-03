@@ -23,6 +23,7 @@ def main(url=''):
         d = get_time_if_url_not_work()
     if "time" in d.keys():
         print("Time is: ", d['time'])
+        home_work(d['time'])
     try:
         print("Date is: ", d['date'])
     except KeyError:
@@ -32,8 +33,16 @@ def main(url=''):
     return True
 
 
-def home_work():
-
+def home_work(hw):
+    if "AM" in hw:
+        print("Доброго Ранку!")
+        return 0
+    elif "PM" in hw:
+        print("Добрий Вечір!")
+        return 0
+    else:
+        print("Помилка")
+        return 1
     pass
 
 
