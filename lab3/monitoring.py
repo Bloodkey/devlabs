@@ -25,10 +25,11 @@ def main(url):
         logging.info("Client info: %s", data['client_info'])
     except Exception as e:
         logging.error("Exception: %s", e)
-
+'''
     while 1 == 1:
         time.sleep(60)
         run()
+'''
 
 if __name__ == '__main__':
     run()

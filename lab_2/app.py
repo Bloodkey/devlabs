@@ -33,15 +33,15 @@ def main(url=''):
     return True
 
 
-def home_work(hw):
-    if "AM" in hw:
-        print("Доброго Ранку!")
+def home_work(m):
+    if "AM" in m:
+        print("AM")
         return 0
-    elif "PM" in hw:
-        print("Добрий Вечір!")
+    elif "PM" in m:
+        print("PM")
         return 0
     else:
-        print("Помилка")
+        print("error")
         return 1
     pass
 
